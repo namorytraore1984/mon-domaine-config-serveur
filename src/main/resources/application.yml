@@ -1,0 +1,23 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: mon-domaine-config-serveur
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/namorytraore1984/-mon-domaine-config.git
+          search-paths:
+            - configurations
+          username: namorytraore1984
+          password: Kankann1984
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+
+encrypt:
+  key: ${ENCRYPT_KEY:symetric_key_default}
